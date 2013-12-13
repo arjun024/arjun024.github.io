@@ -137,7 +137,7 @@ var Terminal = new Class({
 			this.currentPrompt.getElement('.cursor').destroy();
 
 		this.currentPrompt = new Element('div');
-		this.currentPrompt.grab(new Element('span').addClass('prompt').set('text', '[Arjun@athena]$'));
+		this.currentPrompt.grab(new Element('span').addClass('prompt').set('text', '[guest@arjunsreedharan.org]$'));
 		this.currentCommand = new Element('span').addClass('command');
 		this.currentPrompt.grab(this.currentCommand);
 		this.currentPrompt.grab(new Element('span').addClass('cursor'));
