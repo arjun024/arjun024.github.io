@@ -13,7 +13,7 @@ var Terminal = new Class({
 		this.out('&nbsp;');
 		this.prompt();
 
-		$('welcomelink').focus();
+		//$('welcomelink').focus();
 
 		this.path = '.';
 
@@ -177,6 +177,7 @@ var Terminal = new Class({
 			this.out('<span class="commandhelp">whoami</span>Displays your username.');
 			this.out('<span class="commandhelp">whois</span>Who is ..?');
 			this.prompt();
+			this.out('&nbsp;');
 			return;
 		}
 
@@ -185,6 +186,7 @@ var Terminal = new Class({
 		if (command == 'blog') {
 			this.out('<a target="_blank" href="//arjunsreedharan.org">arjunsreedharan.org</a> - Ahh nothing there');
 			this.prompt();
+			this.out('&nbsp;');
 			return;
 		}
 
@@ -192,29 +194,34 @@ var Terminal = new Class({
 			this.currentPrompt = null;
 			this.terminal.empty();
 			this.prompt();
+			this.out('&nbsp;');
 			return;
 		}
 
 		if (command == 'contact') {
 			this.out('arjun024@gmail.com');
 			this.prompt();
+			this.out('&nbsp;');
 			return;
 		}
 
 		if (command == 'copy') {
 			this.out('what?');
 			this.prompt();
+			this.out('&nbsp;');
 			return;
 		}
 		
 		if (command == 'su') {
 			this.out('Really??, you think you can take over. you are quite a work. huhh ');
 			this.prompt();
+			this.out('&nbsp;');
 			return;
 		}
 		if (command == 'date') {
 			this.out(new Date());
 			this.prompt();
+			this.out('&nbsp;');
 			return;
 		}
 
@@ -227,6 +234,7 @@ var Terminal = new Class({
 			if (dest == 'archives')      { window.location.href = '//arjunsreedharan.org/archives'; }
 			if (dest == '') { this.out('destination: home, blog, about, contact, archives'); }
 			this.prompt();
+			this.out('&nbsp;');
 			return;
 		}
 
@@ -240,6 +248,7 @@ var Terminal = new Class({
 					this.out('Only superusers are allowed access to the directory tree.');
 				}
 				this.prompt(); // Do not show prompt until ajax call is complete
+				this.out('&nbsp;');
 			}.bind(this));
 			return;
 		}
@@ -247,42 +256,49 @@ var Terminal = new Class({
 		if (command == 'press') {
 			this.out('what do you think you are doing');
 			this.prompt();
+			this.out('&nbsp;');
 			return;
 		}
 
 		if (command == 'projects') {
 			this.out('not interested. sorry');
 			this.prompt();
+			this.out('&nbsp;');
 			return;
 		}
 
 		if (command == 'skills') {
 			this.out('\0');
 			this.prompt();
+			this.out('&nbsp;');
 			return;
 		}
 
 		if (command == 'svn') {
 			this.out('nope');
 			this.prompt();
+			this.out('&nbsp;');
 			return;
 		}
 		
 		if (command == 'resume') {
 			this.out('duhh!');
 			this.prompt();
+			this.out('&nbsp;');
 			return;
 		}
 		
 		if (command == 'whoami') {
 			this.out('guest');
 			this.prompt();
+			this.out('&nbsp;');
 			return;
 		}
 		
 		if (command == 'whois') {
 			this.out('who is what?');
 			this.prompt();
+			this.out('&nbsp;');
 			return;
 		}
 		
@@ -293,8 +309,8 @@ var Terminal = new Class({
 
 		if (command)
 			this.out('-bash: ' + command + ': command not found');
-
 		this.prompt();
+		this.out('&nbsp;');
 	}
 });
 
