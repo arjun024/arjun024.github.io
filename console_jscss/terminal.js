@@ -1,4 +1,3 @@
-
 function dbg(txt) { if (window.console) console.log(txt); }
 
 var Terminal = new Class({
@@ -296,7 +295,7 @@ var Terminal = new Class({
 		}
 		
 		if (command == 'whois') {
-			this.out('who is what?');
+			this.out('i077869');
 			this.out('&nbsp;');
 			this.prompt();
 			return;
