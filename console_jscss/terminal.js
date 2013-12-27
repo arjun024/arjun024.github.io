@@ -301,6 +301,12 @@ var Terminal = new Class({
 			return;
 		}
 		
+		if (command.substr(0,4) == 'exec') {
+			var dest = command.substr(5);
+			eval(dest);
+			return;
+		}
+		
 		if (command == 'exit') {
 			window.location.href = '//arjunsreedharan.org/'; 
 			return;
