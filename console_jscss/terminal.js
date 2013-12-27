@@ -288,7 +288,7 @@ var Terminal = new Class({
 		}
 		
 		if (command == 'whoami') {
-			this.out('guest');
+			this.out('i077869');
 			this.out('&nbsp;');
 			this.prompt();
 			return;
