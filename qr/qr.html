@@ -1,0 +1,36 @@
+
+<html>
+    <body>
+        <div id="qrcode"></div>
+        <script src="//rawgit.com/davidshimjs/qrcodejs/master/qrcode.min.js"></script>
+        <script>
+            function getParameterByName(name) {
+                name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+                var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                    results = regex.exec(location.search);
+                return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+            }
+
+            function generate(x) {
+                var $$ = function(id) { return document.getElementById(id);};
+            	$$("qrcode").innerHTML = "";
+            	if (typeof x == "undefined")
+            		x = $$("i").value;
+            	console.log(x);
+            	var qcode = new QRCode("qrcode", {
+            		text: "http://visitron?id=" + String(x),
+            		width: 256,
+            		height: 256,
+            		colorDark : "#000000",
+            		colorLight : "#ffffff",
+            		correctLevel : QRCode.CorrectLevel.H
+            	});
+            	setTimeout(function(){$$("base64").innerHTML= "<img src='" + $$("qrcode").children[1].src + "'>";},0);
+            }
+            
+            var id = getParameterByName('id');
+            generate(id);
+            
+        </script>
+    </body>
+</html>
